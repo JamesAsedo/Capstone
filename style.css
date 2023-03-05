@@ -1,0 +1,26 @@
+body {
+  background-color: #dff2f5;
+}
+
+.nav-bar {
+  background-color: #b6cdf4;
+  padding: 1em;
+  color: #5c7d9c;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+nav > ul > li {
+  border: solid 1px;
+  padding: .33em;
+  display: inline-block;
+}
+
+footer {
+  padding: .5em;
+  background-color: #ADA8B6;
+}
+
+@media screen and (max-width: 550px){
+
+}
