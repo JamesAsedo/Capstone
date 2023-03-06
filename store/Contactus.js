@@ -1,4 +1,4 @@
 export default {
-  header: "Contact Us Page",
+  header: "Contact Us",
   view: "Contactus"
 };

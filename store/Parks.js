@@ -1,4 +1,4 @@
 export default {
-  header: "Parks Page",
+  header: "Parks",
   view: "Parks"
 };
