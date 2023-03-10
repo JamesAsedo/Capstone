@@ -1,5 +1,5 @@
 body {
-  background-color: #ebf2f8;
+  background-color: #fafdff;
 }
 
 header {
@@ -10,7 +10,7 @@ header {
 }
 
 .nav-bar {
-  background-color: #b6cdf4;
+  background-color: #f6fafa;
   padding: 1em;
   color: #5c7d9c;
   font-size: 1.2em;
@@ -26,6 +26,10 @@ nav > ul > li {
 footer {
   padding: .5em;
   background-color: #ADA8B6;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  align-items: center;
 }
 
 @media (max-width: 549px){
