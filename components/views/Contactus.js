@@ -27,7 +27,7 @@ export default () => html`
         <label for="msg">Enter your message:</label>
         <textarea name="msg" id="msg" cols="30" rows="15"></textarea>
       </div>
-      <input type="submit" name="submit" value="Submit"/>
+      <input type="submit" name="submit" value="Submit" />
     </form>
   </main>
 `;

@@ -1,7 +1,8 @@
 import html from "html-literal";
 
-export default () => html`
-  <main>
-    Woof
-  </main>
+export default (state) => html`
+  <section>
+    <!-- <p>${state.dogfactAPI}</p> -->
+    -->
+  </section>
 `;
