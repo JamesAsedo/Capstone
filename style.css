@@ -1,5 +1,12 @@
 body {
-  background-color: #dff2f5;
+  background-color: #ebf2f8;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  align-items: center;
 }
 
 .nav-bar {
@@ -21,7 +28,7 @@ footer {
   background-color: #ADA8B6;
 }
 
-@media screen and (max-width: 549px){
+@media (max-width: 549px){
   .hidden--mobile {
     display: none !important;
   }
@@ -48,8 +55,13 @@ footer {
     padding: 0.5rem;
     list-style-type: none;
   }
+}
 
   @media (min-width: 550px) {
+    nav > .fa-bars {
+      display: none;
+    }
+
     nav > ul {
       display: flex;
       justify-content: space-evenly;
@@ -64,6 +76,4 @@ footer {
       border-radius: 25px;
     }
 
-    nav > .fa-bars {
-      display: none;
-    }
+  }
