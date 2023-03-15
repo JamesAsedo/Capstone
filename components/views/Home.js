@@ -2,9 +2,7 @@ import html from "html-literal";
 
 export default state => html`
   <main>
-    <div class="main-content">
-      <img id="dog-picture" src="" />
-    </div>
+    <div class="main-content"></div>
   </main>
 
   <h3>Today's Weather</h3>
@@ -13,4 +11,12 @@ export default state => html`
     Temperature is ${state.weather.temp}F, and it feels like
     ${state.weather.feelslike}F.
   </h3>
+  <div>
+    <form>
+      <label for="zip-code">Zip Code:</label>
+      <input type="text" id="zipInput" name="zipInput" />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div>${JSON.stringify(state.tableData)}</div>
 `;
