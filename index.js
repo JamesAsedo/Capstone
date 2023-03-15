@@ -16,15 +16,29 @@ function render(state = store.Home) {
   ${Main(state)}
   ${Footer()}
   `;
-  afterRender();
+  afterRender(state);
   router.updatePageLinks();
 }
 
-function afterRender() {
+function afterRender(state) {
   // add menu toggle to bars icon in nav bar
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+  if (state.view === "Home") {
+    console.log("Home test");
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const zipCode = event.target.elements.zipInput.value;
+      console.log("zip code", zipCode);
+      const url = `http://localhost:4040/yelp?location=${zipCode}&term=Pet`;
+      axios.get(url).then(response => {
+        store.Home.tableData = response.data;
+        console.log(response.data);
+        router.navigate("/Home");
+      });
+    });
+  }
 }
 
 router.hooks({
@@ -60,9 +74,19 @@ router.hooks({
             console.log(store.Home.weather);
 
             done();
-          })
-          .catch(err => console.log(err));
+          });
         break;
+
+      // case "Home":
+      //   axios.get(url).then(response => {
+      //     store.Home.tableData = response.data;
+      //     console.log(response.data)
+
+
+      //           done();
+
+      //     .catch(err => console.log(err));
+      //   break;
       default:
         done();
     }
