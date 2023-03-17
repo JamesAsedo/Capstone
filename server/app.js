@@ -83,11 +83,13 @@ app.get("/yelp", async (request, response) => {
   const options = {
     method: "GET",
     url: "https://api.yelp.com/v3/businesses/search",
-    params: { location: params.location, term: params.term },
+    params: {
+      location: params.location,
+      term: params.term
+    },
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer Jx8QmB0y3Za8v7MDJmw1KroY_nKJARi1K3htPyADS2wbDxM83_SlIlyq5ewK7HgFH3GtAfUd8tXD-NyieBwYj8Uio4eLLvDZnFNER1FLW2pN2g5SzTbzdA4iMWIKZHYx"
+      Authorization: `Bearer ${process.env.YELP_API_KEY}`
     }
   };
 
