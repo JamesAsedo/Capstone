@@ -26,16 +26,21 @@ function afterRender(state) {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
   if (state.view === "Home") {
-    console.log("Home test");
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
+      console.log(event.target);
+      const category = event.target.elements.category.value;
       const zipCode = event.target.elements.zipInput.value;
+      console.log("category", category);
       console.log("zip code", zipCode);
-      const url = `http://localhost:4040/yelp?location=${zipCode}&term=Pet`;
+      const url = `http://localhost:4040/yelp?location=${zipCode}&term=dog+friendly+${category}`;
       axios.get(url).then(response => {
-        store.Home.tableData = response.data;
-        console.log(response.data);
-        router.navigate("/Home");
+        store.Home.yelpArray = response.data;
+        let yelpArray = [];
+        console.log(yelpArray);
+        // console.log(response.data);
+
+        router.navigate(`/${category}`);
       });
     });
   }
@@ -81,7 +86,6 @@ router.hooks({
       //   axios.get(url).then(response => {
       //     store.Home.tableData = response.data;
       //     console.log(response.data)
-
 
       //           done();
 
