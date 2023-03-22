@@ -1,4 +1,4 @@
 export default {
-  header: "Contact Us",
+  header: "Go Bingo Go!",
   view: "Contactus"
 };

@@ -1,4 +1,5 @@
 export default {
-  header: "Services",
-  view: "Services"
+  header: "Go Bingo Go!",
+  view: "Services",
+  yelpArray: []
 };

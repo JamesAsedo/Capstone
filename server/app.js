@@ -85,6 +85,7 @@ app.get("/yelp", async (request, response) => {
     url: "https://api.yelp.com/v3/businesses/search",
     params: {
       location: params.location,
+      attributes: params.attributes,
       term: params.term
     },
     headers: {
