@@ -1,5 +1,5 @@
 export default {
-  header: "Parks",
+  header: "Go Bingo Go!",
   view: "Parks",
   yelpArray: []
 };

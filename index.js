@@ -33,14 +33,59 @@ function afterRender(state) {
       const zipCode = event.target.elements.zipInput.value;
       console.log("category", category);
       console.log("zip code", zipCode);
-      const url = `http://localhost:4040/yelp?location=${zipCode}&term=dog+friendly+${category}`;
+      const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=${category}+dog`;
       axios.get(url).then(response => {
-        store.Home.yelpArray = response.data;
-        let yelpArray = [];
-        console.log(yelpArray);
+        store[category].yelpArray = response.data;
+        // let yelpArray = [];
+        // console.log(yelpArray);
         // console.log(response.data);
 
         router.navigate(`/${category}`);
+      });
+    });
+  }
+  if (state.view === "Parks") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const zipCode = event.target.elements.zipInput.value;
+      console.log("zip code", zipCode);
+      const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=parks+dogs`;
+      axios.get(url).then(response => {
+        store.Parks.yelpArray = response.data;
+        let yelpArray = [];
+        console.log(yelpArray);
+        // console.log(response.data);
+        router.navigate("/Parks");
+      });
+    });
+  }
+  if (state.view === "Restaurants") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const zipCode = event.target.elements.zipInput.value;
+      console.log("zip code", zipCode);
+      const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=restaurants+dog-friendly`;
+      axios.get(url).then(response => {
+        store.Restaurants.yelpArray = response.data;
+        let yelpArray = [];
+        console.log(yelpArray);
+        // console.log(response.data);
+        router.navigate("/Restaurants");
+      });
+    });
+  }
+  if (state.view === "Services") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const zipCode = event.target.elements.zipInput.value;
+      console.log("zip code", zipCode);
+      const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=dog+grooming+training+clinic+supplies`;
+      axios.get(url).then(response => {
+        store.Services.yelpArray = response.data;
+        let yelpArray = [];
+        console.log(yelpArray);
+        // console.log(response.data);
+        router.navigate("/Services");
       });
     });
   }
@@ -81,16 +126,8 @@ router.hooks({
             done();
           });
         break;
-
-      // case "Home":
-      //   axios.get(url).then(response => {
-      //     store.Home.tableData = response.data;
-      //     console.log(response.data)
-
-      //           done();
-
-      //     .catch(err => console.log(err));
-      //   break;
+      // case "Parks":
+      //   axios.get()
       default:
         done();
     }

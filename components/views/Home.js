@@ -1,19 +1,16 @@
 import html from "html-literal";
+import kobePic from "/assets/Kobe Pic.jpeg";
 
 export default state => html`
-  <main>
-    <div class="main-content"></div>
-  </main>
-
-  <h3>Today's Weather</h3>
+  <!-- <h3>Today's Weather</h3>
   <h3>
     The weather in ${state.weather.city} is ${state.weather.description}.
     Temperature is ${state.weather.temp}F, and it feels like
     ${state.weather.feelslike}F.
-  </h3>
+  </h3> -->
   <div>
     <form>
-      <label for="searchCategory"></label>
+      <label for="searchCategory">What are you looking for?</label>
       <select name="category" id="category">
         <option value="">--Please choose a category--</option>
         <option value="Restaurants">Restaurants</option>
@@ -25,23 +22,5 @@ export default state => html`
       <button type="submit">Submit</button>
     </form>
   </div>
-  <!-- <div>${JSON.stringify(state.tableData)}</div> -->
-  <table id="results">
-    ${state.yelpArray
-      .map(entry => {
-        return html`
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-          <td>${entry.name}</td>
-          <td><img src=${entry.image} /></td>
-          <td>${entry.location.display_address}</td>
-          <td>${entry.display_phone}</td>
-        `;
-      })
-      .join("")}
-  </table>
+  <div class="background"></div>
 `;

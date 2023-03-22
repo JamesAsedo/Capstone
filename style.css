@@ -1,35 +1,57 @@
 body {
-  background-color: #ffffff;
+  background-color: #e1f0fc;
 }
 
-header {
+header > h1 > a {
+  color: #015a9d;
   display: flex;
   justify-content: space-around;
   position: relative;
   align-items: center;
+  text-decoration: none;
+  font-weight: bolder;
 }
 
 .nav-bar {
-  background-color: #c0fafa;
+  background-color: #ffffff;
   padding: 1em;
-  color: #5c7d9c;
-  font-size: 1.2em;
-  font-weight: 600;
+  color: #f9fafc;
+  font-size: 1em;
+  font-weight: 1000;
 }
 
 nav > ul > li {
-  border: solid 1px;
   padding: .33em;
   display: inline-block;
 }
 
 footer {
   padding: .5em;
-  background-color: #ADA8B6;
+  background-color: #015a9d;
   display: flex;
   justify-content: space-around;
   position: relative;
   align-items: center;
+}
+
+footer > a {
+  color: white;
+  text-decoration: none;
+
+}
+
+form > label {
+
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/assets/Kobe\ Pic.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
 }
 
 @media (max-width: 549px){
@@ -62,6 +84,11 @@ footer {
 }
 
   @media (min-width: 550px) {
+    nav{
+      background: #015a9d;
+      width: 100%;
+    }
+
     nav > .fa-bars {
       display: none;
     }
@@ -69,15 +96,98 @@ footer {
     nav > ul {
       display: flex;
       justify-content: space-evenly;
-      padding: 0 0;
+      /* padding: 0 0; */
     }
 
     nav > ul > li {
       display: inline-block;
-      text-decoration: none;
-      border: 1px solid;
+      /* border: 1px solid; */
       padding: 0.5rem 0.5rem;
-      border-radius: 25px;
+      /* border-radius: 25px; */
+      line-height: 20px;
+      margin: 0 5px;
+    }
+
+    nav > ul > li > a {
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+
     }
 
   }
+
+  /* Container for form and main content */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #015a9d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Main content styling */
+main {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Table styling */
+table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+td img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* optional, to ensure images fill the space */
+}
+
