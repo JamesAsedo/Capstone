@@ -80,7 +80,7 @@ function afterRender(state) {
       event.preventDefault();
       const zipCode = event.target.elements.zipInput.value;
       console.log("zip code", zipCode);
-      const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=dog+grooming+training+clinic+supplies`;
+      const url = `https://james-a-fs-web-development-capstone.onrender.com/yelp?location=${zipCode}&attributes=dogs_allowed&term=dog+grooming+training+clinic+supplies`;
       axios.get(url).then(response => {
         store.Services.yelpArray = response.data;
         let yelpArray = [];
