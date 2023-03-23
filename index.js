@@ -33,13 +33,9 @@ function afterRender(state) {
       const zipCode = event.target.elements.zipInput.value;
       console.log("category", category);
       console.log("zip code", zipCode);
-      // const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=${category}+dog`;
       const url = `https://james-a-fs-web-development-capstone.onrender.com/yelp?location=${zipCode}&attributes=dogs_allowed&term=${category}+dog`;
       axios.get(url).then(response => {
         store[category].yelpArray = response.data;
-        // let yelpArray = [];
-        // console.log(yelpArray);
-        // console.log(response.data);
 
         router.navigate(`/${category}`);
       });
@@ -55,7 +51,6 @@ function afterRender(state) {
         store.Parks.yelpArray = response.data;
         let yelpArray = [];
         console.log(yelpArray);
-        // console.log(response.data);
         router.navigate("/Parks");
       });
     });
@@ -70,7 +65,6 @@ function afterRender(state) {
         store.Restaurants.yelpArray = response.data;
         let yelpArray = [];
         console.log(yelpArray);
-        // console.log(response.data);
         router.navigate("/Restaurants");
       });
     });
@@ -85,7 +79,6 @@ function afterRender(state) {
         store.Services.yelpArray = response.data;
         let yelpArray = [];
         console.log(yelpArray);
-        // console.log(response.data);
         router.navigate("/Services");
       });
     });
