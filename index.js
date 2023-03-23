@@ -33,7 +33,8 @@ function afterRender(state) {
       const zipCode = event.target.elements.zipInput.value;
       console.log("category", category);
       console.log("zip code", zipCode);
-      const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=${category}+dog`;
+      // const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=${category}+dog`;
+      const url = `https://james-a-fs-web-development-capstone.onrender.com/yelp?location=${zipCode}&attributes=dogs_allowed&term=${category}+dog`;
       axios.get(url).then(response => {
         store[category].yelpArray = response.data;
         // let yelpArray = [];
@@ -44,51 +45,51 @@ function afterRender(state) {
       });
     });
   }
-  if (state.view === "Parks") {
-    document.querySelector("form").addEventListener("submit", event => {
-      event.preventDefault();
-      const zipCode = event.target.elements.zipInput.value;
-      console.log("zip code", zipCode);
-      const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=parks+dogs`;
-      axios.get(url).then(response => {
-        store.Parks.yelpArray = response.data;
-        let yelpArray = [];
-        console.log(yelpArray);
-        // console.log(response.data);
-        router.navigate("/Parks");
-      });
-    });
-  }
-  if (state.view === "Restaurants") {
-    document.querySelector("form").addEventListener("submit", event => {
-      event.preventDefault();
-      const zipCode = event.target.elements.zipInput.value;
-      console.log("zip code", zipCode);
-      const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=restaurants+dog-friendly`;
-      axios.get(url).then(response => {
-        store.Restaurants.yelpArray = response.data;
-        let yelpArray = [];
-        console.log(yelpArray);
-        // console.log(response.data);
-        router.navigate("/Restaurants");
-      });
-    });
-  }
-  if (state.view === "Services") {
-    document.querySelector("form").addEventListener("submit", event => {
-      event.preventDefault();
-      const zipCode = event.target.elements.zipInput.value;
-      console.log("zip code", zipCode);
-      const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=dog+grooming+training+clinic+supplies`;
-      axios.get(url).then(response => {
-        store.Services.yelpArray = response.data;
-        let yelpArray = [];
-        console.log(yelpArray);
-        // console.log(response.data);
-        router.navigate("/Services");
-      });
-    });
-  }
+  // if (state.view === "Parks") {
+  //   document.querySelector("form").addEventListener("submit", event => {
+  //     event.preventDefault();
+  //     const zipCode = event.target.elements.zipInput.value;
+  //     console.log("zip code", zipCode);
+  //     const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=parks+dogs`;
+  //     axios.get(url).then(response => {
+  //       store.Parks.yelpArray = response.data;
+  //       let yelpArray = [];
+  //       console.log(yelpArray);
+  //       // console.log(response.data);
+  //       router.navigate("/Parks");
+  //     });
+  //   });
+  // }
+  // if (state.view === "Restaurants") {
+  //   document.querySelector("form").addEventListener("submit", event => {
+  //     event.preventDefault();
+  //     const zipCode = event.target.elements.zipInput.value;
+  //     console.log("zip code", zipCode);
+  //     const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=restaurants+dog-friendly`;
+  //     axios.get(url).then(response => {
+  //       store.Restaurants.yelpArray = response.data;
+  //       let yelpArray = [];
+  //       console.log(yelpArray);
+  //       // console.log(response.data);
+  //       router.navigate("/Restaurants");
+  //     });
+  //   });
+  // }
+  // if (state.view === "Services") {
+  //   document.querySelector("form").addEventListener("submit", event => {
+  //     event.preventDefault();
+  //     const zipCode = event.target.elements.zipInput.value;
+  //     console.log("zip code", zipCode);
+  //     const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=dog+grooming+training+clinic+supplies`;
+  //     axios.get(url).then(response => {
+  //       store.Services.yelpArray = response.data;
+  //       let yelpArray = [];
+  //       console.log(yelpArray);
+  //       // console.log(response.data);
+  //       router.navigate("/Services");
+  //     });
+  //   });
+  // }
 }
 
 router.hooks({
@@ -100,34 +101,6 @@ router.hooks({
     // Add a switch case statement to handle multiple routes
     switch (view) {
       case "Home":
-        axios
-          .get(
-            // Replace the key provided here with your own key from openweathermap
-            `https://api.openweathermap.org/data/2.5/weather?q=st%20louis&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
-          )
-          .then(response => {
-            console.log(response.data);
-            const kelvinToFahrenheit = kelvinTemp =>
-              Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
-
-            // Save Data into state
-            store.Home.weather = {};
-            store.Home.weather.city = response.data.name;
-            store.Home.weather.temp = kelvinToFahrenheit(
-              response.data.main.temp
-            );
-            store.Home.weather.feelsLike = kelvinToFahrenheit(
-              response.data.main.feels_like
-            );
-            store.Home.weather.description =
-              response.data.weather[0].description;
-            console.log(store.Home.weather);
-
-            done();
-          });
-        break;
-      // case "Parks":
-      //   axios.get()
       default:
         done();
     }
