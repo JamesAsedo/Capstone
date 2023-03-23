@@ -45,51 +45,51 @@ function afterRender(state) {
       });
     });
   }
-  // if (state.view === "Parks") {
-  //   document.querySelector("form").addEventListener("submit", event => {
-  //     event.preventDefault();
-  //     const zipCode = event.target.elements.zipInput.value;
-  //     console.log("zip code", zipCode);
-  //     const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=parks+dogs`;
-  //     axios.get(url).then(response => {
-  //       store.Parks.yelpArray = response.data;
-  //       let yelpArray = [];
-  //       console.log(yelpArray);
-  //       // console.log(response.data);
-  //       router.navigate("/Parks");
-  //     });
-  //   });
-  // }
-  // if (state.view === "Restaurants") {
-  //   document.querySelector("form").addEventListener("submit", event => {
-  //     event.preventDefault();
-  //     const zipCode = event.target.elements.zipInput.value;
-  //     console.log("zip code", zipCode);
-  //     const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=restaurants+dog-friendly`;
-  //     axios.get(url).then(response => {
-  //       store.Restaurants.yelpArray = response.data;
-  //       let yelpArray = [];
-  //       console.log(yelpArray);
-  //       // console.log(response.data);
-  //       router.navigate("/Restaurants");
-  //     });
-  //   });
-  // }
-  // if (state.view === "Services") {
-  //   document.querySelector("form").addEventListener("submit", event => {
-  //     event.preventDefault();
-  //     const zipCode = event.target.elements.zipInput.value;
-  //     console.log("zip code", zipCode);
-  //     const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=dog+grooming+training+clinic+supplies`;
-  //     axios.get(url).then(response => {
-  //       store.Services.yelpArray = response.data;
-  //       let yelpArray = [];
-  //       console.log(yelpArray);
-  //       // console.log(response.data);
-  //       router.navigate("/Services");
-  //     });
-  //   });
-  // }
+  if (state.view === "Parks") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const zipCode = event.target.elements.zipInput.value;
+      console.log("zip code", zipCode);
+      const url = `https://james-a-fs-web-development-capstone.onrender.com/yelp?location=${zipCode}&attributes=dogs_allowed&term=parks+dogs`;
+      axios.get(url).then(response => {
+        store.Parks.yelpArray = response.data;
+        let yelpArray = [];
+        console.log(yelpArray);
+        // console.log(response.data);
+        router.navigate("/Parks");
+      });
+    });
+  }
+  if (state.view === "Restaurants") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const zipCode = event.target.elements.zipInput.value;
+      console.log("zip code", zipCode);
+      const url = `https://james-a-fs-web-development-capstone.onrender.com/yelp?location=${zipCode}&attributes=dogs_allowed&term=restaurants+dog-friendly`;
+      axios.get(url).then(response => {
+        store.Restaurants.yelpArray = response.data;
+        let yelpArray = [];
+        console.log(yelpArray);
+        // console.log(response.data);
+        router.navigate("/Restaurants");
+      });
+    });
+  }
+  if (state.view === "Services") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const zipCode = event.target.elements.zipInput.value;
+      console.log("zip code", zipCode);
+      const url = `http://localhost:4040/yelp?location=${zipCode}&attributes=dogs_allowed&term=dog+grooming+training+clinic+supplies`;
+      axios.get(url).then(response => {
+        store.Services.yelpArray = response.data;
+        let yelpArray = [];
+        console.log(yelpArray);
+        // console.log(response.data);
+        router.navigate("/Services");
+      });
+    });
+  }
 }
 
 router.hooks({
