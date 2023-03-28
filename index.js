@@ -54,6 +54,16 @@ function afterRender(state) {
         router.navigate("/Parks");
       });
     });
+    const resultsTable = document.getElementById("results");
+    const noParkResults = document.getElementById("no-park-results");
+
+    if (state.yelpArray.length === 0) {
+      resultsTable.style.display = "none";
+      noParkResults.style.display = "block";
+    } else {
+      resultsTable.style.display = "table";
+      noParkResults.style.display = "none";
+    }
   }
   if (state.view === "Restaurants") {
     document.querySelector("form").addEventListener("submit", event => {
@@ -68,6 +78,16 @@ function afterRender(state) {
         router.navigate("/Restaurants");
       });
     });
+    const resultsTable = document.getElementById("results");
+    const noRestaurantResults = document.getElementById("no-restaurant-results");
+
+    if (state.yelpArray.length === 0) {
+      resultsTable.style.display = "none";
+      noRestaurantResults.style.display = "block";
+    } else {
+      resultsTable.style.display = "table";
+      noRestaurantResults.style.display = "none";
+    }
   }
   if (state.view === "Services") {
     document.querySelector("form").addEventListener("submit", event => {
@@ -82,6 +102,17 @@ function afterRender(state) {
         router.navigate("/Services");
       });
     });
+    const resultsTable = document.getElementById("results");
+    const noServiceResults = document.getElementById("no-service-results");
+
+    if (state.yelpArray.length === 0) {
+      resultsTable.style.display = "none";
+      noServiceResults.style.display = "block";
+    } else {
+      resultsTable.style.display = "table";
+      noServiceResults.style.display = "none";
+    }
+
   }
 }
 
