@@ -2,13 +2,13 @@ import html from "html-literal";
 import kobePic3 from "/assets/Kobe bee.jpeg";
 
 export default state => html`
-  <main>
+  <main class="pageHeader">
     Woof!
   </main>
 
   <div>
-    <form>
-      <label for="zip-code">Zip Code:</label>
+  <form class="pageForm">
+      <label for="zip-code">Zip Code or City:</label>
       <input type="text" id="zipInput" name="zipInput" />
       <button type="submit">Submit</button>
     </form>

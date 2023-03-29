@@ -1,9 +1,10 @@
 import html from "html-literal";
 
 export default () => html`
-  <main>
+  <div class="background"></div>
+  <main id="contact-us-form">
     <form method="POST" action="https://formspree.io/f/mpzerkyd">
-      <h2>Contact Us</h2>
+      <h2 class="pageHeader">Contact Us</h2>
       <div>
         <label for="customer">Name:</label>
         <input
