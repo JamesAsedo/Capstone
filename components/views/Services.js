@@ -1,5 +1,4 @@
 import html from "html-literal";
-import kobePic3 from "/assets/Kobe bee.jpeg";
 
 export default state => html`
   <main class="pageHeader">
