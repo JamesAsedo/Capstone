@@ -22,6 +22,7 @@ export default () => html`
           name="email"
           id="email"
           placeholder="Enter your email address"
+          required
         />
       </div>
       <div>
