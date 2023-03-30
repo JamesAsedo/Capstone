@@ -1,5 +1,4 @@
 import html from "html-literal";
-import kobePic from "/assets/Kobe Pic.jpeg";
 
 export default state => html`
   <main class="grid">
